@@ -7,6 +7,7 @@ import mysql.connector
 from selenium.webdriver.support.ui import Select
 from dotenv import load_dotenv
 import os
+import string
 
 def open_vtop(driver):
     while(True):
@@ -66,11 +67,15 @@ def clubs(driver):
     tablecontents = soup.find_all('td')
     j = 1
     l = []
+    cur.execute("delete from event")
     for i in tablecontents[:int(k)*10]:
         if(j%10 not in (1,4,0,8)):
             l.append(i.text)
         if(j%10 == 0):
             ins = ("insert ignore into event values (%s ,%s ,%s ,%s ,%s ,%s)")
+            ascii_chars = set(string.printable)
+            for a in range(len(l)):
+                l[a] = ''.join(filter(lambda x: x in ascii_chars, l[a]))
             cur.execute(ins,l)
             l = []
         j+=1
