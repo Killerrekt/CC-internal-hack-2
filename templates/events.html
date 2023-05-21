@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Service</title>
+    <link rel="stylesheet" href="{{  url_for('static', filename='events.css')  }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static',filename = '8dd8b7ccd46549f7a946576b29c96889.png') }}" alt="TrackVIT Logo">
+            </div>
+            <form action="{{ url_for('events') }}" method="POST">
+                <select name="CLUB" class = "CLUB">
+                    {% for i in club %}
+                        <option value = "{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <input type="submit" value="submit">
+            </form>
+            {% if check %}
+            <table>
+                <tr>
+                    <th>CLUB</th>
+                    <th>EVENT</th>
+                    <th>REGISTRATION DATES</th>
+                    <th>TIMINGS</th>
+                    <th>NO OF DAYS</th>
+                    <th>LOCATION</th>
+                </tr>
+                {% for i in check %}
+                <tr>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[4]}}</td>
+                    <td>{{i[5]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+            <ul class="nav-links">
+                <li><a href="{{ url_for('rend') }}#about">About</a></li>
+                <li><a href="{{ url_for('rend') }}#features">Our Features</a></li>
+                <li><a href="{{ url_for('rend') }}#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    </main>
+    <footer>
+        <p>&copy; 2023 TrackVIT. All rights reserved.</p>
+    </footer>
+</body>
+</html>

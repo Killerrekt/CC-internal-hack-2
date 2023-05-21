@@ -1,0 +1,37 @@
+.logo img {
+    width: 150px;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #7A7265;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #C0B7B1;
+}
+
+header {
+    background-color: #433E3F;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    background-color: #7A7265;
+    color: #C0B7B1;
+    font-family:Impact, Haettenschweiler, 'Arial', sans-serif;
+  }
