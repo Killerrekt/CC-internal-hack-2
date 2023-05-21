@@ -35,3 +35,14 @@ body {
     color: #C0B7B1;
     font-family:Impact, Haettenschweiler, 'Arial', sans-serif;
   }
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th{
+    padding: 5px;
+}
